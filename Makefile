@@ -7,6 +7,9 @@ all: build
 venv:
 	uv venv
 
+build-remote: venv
+	uv sync
+
 build: build-cuda
 
 build-cpu: venv

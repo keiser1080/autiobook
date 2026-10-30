@@ -28,6 +28,17 @@ make build-cpu
 local tts extras are optional. to drive an openai-compatible tts endpoint
 instead, install without the `[local]` extra and set `--api-base` / `OPENAI_BASE_URL`.
 
+### Build for remote TTS (e.g. CrispASR)
+
+No extra is needed — the default dependency set contains only the
+client code. This avoids installing `qwen-tts`, `torch` and `torchaudio`:
+
+    make build-remote
+
+Then point Autiobook at your server:
+
+    export OPENAI_BASE_URL="http://localhost:8080/v1"
+
 ## usage
 
 ### enter the venv
